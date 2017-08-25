@@ -24,7 +24,7 @@ echo "Let's setup the server"
 
 # Check if Git is installed
 echo " - Git Check..."
-which -s git 
+which -a git 
 if [[ $? != 0 ]] ; then
     #Install Git
     apt install git
@@ -43,7 +43,7 @@ mv .meanStackSetupTemp/{.,}* ./
 # Check if Node is installed
 #   Note that npm comes with node now
 echo " - Node & npm Check..."
-which -s node 
+which -a node 
 if [[ $? != 0 ]] ; then
     #Install node
     echo "Downloading and running setup scriptfor node 7"
@@ -55,17 +55,17 @@ fi
 
 # Install Bower
 echo " - Bower Check..."
-which -s bower || npm install -g bower
+which -a bower || npm install -g bower
 
 
 # Install Grunt
 echo " - Grunt Check..."
-which -s grunt || npm install -g grunt
+which -a grunt || npm install -g grunt
 
 
 # Check if Heroku toolbelt is installed
 echo " - Heroku Toolbelt Check..."
-which -s heroku
+which -a heroku
 if [[ $? != 0 ]] ; then
     # Install Heroku toolbelt
     echo "Downloading Heroku toolbelt"
@@ -82,7 +82,7 @@ fi
 
 # Install MongoDB
 echo " - MongoDB Check..."
-which -s mongo 
+which -a mongo 
 if [[ $? != 0 ]] ; then
     #Install MongoDB
     echo "Importing Mongo Key"
