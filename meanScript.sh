@@ -69,8 +69,7 @@ which -a heroku
 if [[ $? != 0 ]] ; then
     # Install Heroku toolbelt
     echo "Downloading Heroku toolbelt"
-    curl -O http://assets.heroku.com/heroku-toolbelt/heroku-toolbelt.pkg
-    open /tmp/heroku-toolbelt.pkg
+    wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
     read -p "Press return when done with Heroku installation"
 
     # open https://api.heroku.com/login
