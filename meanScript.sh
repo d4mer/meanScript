@@ -74,11 +74,11 @@ echo " - Bower Check..."
 which -a bower || npm install -g bower
 
 #######################################################################################
-# Install Grunt
+# Install Gulp
 #######################################################################################
 
 echo " - Grunt Check..."
-which -a grunt || npm install -g grunt
+which -a grunt || npm install -g gulp
 
 #######################################################################################
 # Check if Heroku toolbelt is installed
