@@ -19,7 +19,7 @@ echo "Updating apt"
 apt update
 
 echo "Let's setup the server"
-    curl -sL https://github.com/d4mer/easy-idempiere-server/blob/folder_system/idempiere_server_setup.sh | bash -
+    #curl -sL https://raw.githubusercontent.com/d4mer/easy-idempiere-server/folder_system/idempiere_server_setup.sh | bash -
 
 
 # Check if Git is installed
