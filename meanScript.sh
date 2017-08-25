@@ -4,6 +4,9 @@
 #   Run this from the folder that you want to be the root of your app,
 #   which can be cloned from or later pushed to Heroku's git repo.
 #   NOTE: this is best done with a clean / empty root folder!
+#   
+#   NOTE: Be sure to run this script as sudo
+#
 #   Troubleshooting: https://github.com/linnovate/mean.
 #
 #   This will pull the latest MEAN.io and install/update the following packages:
@@ -20,7 +23,8 @@ if [[ $? != 0 ]] ; then
 else
     brew update
 fi
-
+echo "Updating apt"
+apt update
 
 # Check if Git is installed
 echo " - Git Check..."
@@ -46,7 +50,9 @@ echo " - Node & npm Check..."
 which -s node 
 if [[ $? != 0 ]] ; then
     #Install node
-    apt install nodejs
+    echo "Downloading and running setup script"
+    curl -sL https://deb.nodesource.com/setup_7.x | bash -
+    apt install -y nodejs
 else
     nodejs update
 fi
