@@ -16,7 +16,7 @@
 
 # Update apt
 echo "Updating apt"
-apt update
+apt update && apt upgrade
 
 echo "Let's setup the server"
     #curl -sL https://raw.githubusercontent.com/d4mer/easy-idempiere-server/folder_system/idempiere_server_setup.sh | bash -
@@ -29,7 +29,7 @@ if [[ $? != 0 ]] ; then
     #Install Git
     apt install git
 else
-    git update
+    #git update
 fi
 
 # Get clone of MEAN.io's repo minus the .git folder and copy to current
@@ -50,7 +50,7 @@ if [[ $? != 0 ]] ; then
     curl -sL https://deb.nodesource.com/setup_7.x | bash -
     apt install -y nodejs
 else
-    nodejs update
+    #nodejs update
 fi
 
 # Install Bower
@@ -76,7 +76,7 @@ if [[ $? != 0 ]] ; then
     # open https://api.heroku.com/login
     # https://api.heroku.com/signup
 else
-    heroku update
+    #heroku update
 fi
 
 
@@ -92,7 +92,7 @@ if [[ $? != 0 ]] ; then
     echo "Installing mongodb-org"
     apt install -y mongodb-org
 else
-    mongodb-org update
+    #mongodb-org update
 fi
 
 # Install node packages
