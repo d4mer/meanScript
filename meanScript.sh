@@ -14,17 +14,13 @@
 #       and any other local packages defined in package.json
 
 
-# Check if Homebrew is installed
-echo " - Brew Check..."
-which -s brew
-if [[ $? != 0 ]] ; then
-    # Install Homebrew - http://brew.sh/
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-else
-    brew update
-fi
+# Update apt
 echo "Updating apt"
 apt update
+
+echo "Let's setup the server"
+    curl -sL https://github.com/d4mer/easy-idempiere-server/blob/folder_system/idempiere_server_setup.sh | bash -
+
 
 # Check if Git is installed
 echo " - Git Check..."
@@ -50,7 +46,7 @@ echo " - Node & npm Check..."
 which -s node 
 if [[ $? != 0 ]] ; then
     #Install node
-    echo "Downloading and running setup script"
+    echo "Downloading and running setup scriptfor node 7"
     curl -sL https://deb.nodesource.com/setup_7.x | bash -
     apt install -y nodejs
 else
