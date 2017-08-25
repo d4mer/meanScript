@@ -28,7 +28,7 @@ which -a git
 if [[ $? != 0 ]] ; then
     #Install Git
     apt install git
-else
+#else
     #git update
 fi
 
