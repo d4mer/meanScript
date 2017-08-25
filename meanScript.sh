@@ -35,7 +35,7 @@ fi
 # Get clone of MEAN.io's repo minus the .git folder and copy to current
 echo " - Cloning MEAN.io..."
 rm -rf .meanStackSetupTemp
-git clone git@github.com:linnovate/mean.git .meanStackSetupTemp || exit $?
+git clone https://github.com/linnovate/mean.git .meanStackSetupTemp || exit $?
 rm -rf .meanStackSetupTemp/.git
 mv .meanStackSetupTemp/{.,}* ./
 
