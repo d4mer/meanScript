@@ -1,6 +1,6 @@
 #!/bin/bash
 #   Modified by Ed Arellano 2017/08
-#
+#   Based on the script by Carlin Yuen https://gist.github.com/carlinyuen/9080123
 #   Run this from the folder that you want to be the root of your app,
 #   which can be cloned from or later pushed to Heroku's git repo.
 #   NOTE: this is best done with a clean / empty root folder!
@@ -24,8 +24,13 @@ fi
 
 # Check if Git is installed
 echo " - Git Check..."
-which -s git || brew install git
-
+which -s git 
+if [[ $? != 0 ]] ; then
+    #Install Git
+    apt install git
+else
+    git update
+fi
 
 # Get clone of MEAN.io's repo minus the .git folder and copy to current
 echo " - Cloning MEAN.io..."
@@ -38,8 +43,13 @@ mv .meanStackSetupTemp/{.,}* ./
 # Check if Node is installed
 #   Note that npm comes with node now
 echo " - Node & npm Check..."
-which -s node || brew install node
-
+which -s node 
+if [[ $? != 0 ]] ; then
+    #Install node
+    apt install nodejs
+else
+    nodejs update
+fi
 
 # Install Bower
 echo " - Bower Check..."
