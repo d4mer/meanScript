@@ -80,8 +80,18 @@ fi
 
 # Install MongoDB
 echo " - MongoDB Check..."
-which -s mongo || brew install mongodb
-
+which -s mongo 
+if [[ $? != 0 ]] ; then
+    #Install MongoDB
+    echo "Importing Mongo Key"
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+    echo "Adding to Repo"
+    echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+    echo "Installing mongodb-org"
+    apt install -y mongodb-org
+else
+    mongodb-org update
+fi
 
 # Install node packages
 echo " - Installing package.json packages..."
