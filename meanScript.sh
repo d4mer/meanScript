@@ -30,6 +30,7 @@
 # Update apt
 #######################################################################################
 
+$SUDO sh <<SCRIPT
 
 echo "Updating apt"
 apt update && apt upgrade
@@ -115,6 +116,8 @@ if [[ $? != 0 ]] ; then
 #else
 #    mongodb-org update
 fi
+
+SCRIPT
 
 #######################################################################################
 # Install node packages
